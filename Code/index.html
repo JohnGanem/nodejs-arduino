@@ -14,17 +14,10 @@
     </style>
   </head>
   <body>
-    <select name="select" id="color">
-      <option value="bleu">Bleu</option>
-      <option value="vert">Vert</option>
-      <option value="rouge">Rouge</option>
-    </select>
-    <input id="bleu">Bleu>
-    <input id="rouge">Rouge>
-    <input id="vert">Vert>
   
   <style>
 	body {
+		text-align: center;
 		margin: auto;
 	}
   
@@ -35,11 +28,14 @@
 	}
 	
 	.buttonColor {
-		height: 50px;
-		width: 50px;
+		height: 100px;
+		width: 100px;
 		border: 1px solid black;
-		border-radius: 25px;
+		border-radius: 50px;
 		cursor: pointer;
+		text-decoration: none;
+		display: block;
+		margin: 10px auto;
 	}
 	
 	#RedButton {
@@ -61,15 +57,25 @@
 	#OffButton {
 		background-color: gray;
 	}
+	
+	#choice {
+		margin-bottom: 25px;
+	}
   
   </style>
   
+	<div style="margin-top: 250px;"></div>
+  
+	<h1 id="choice">
+		Choisissez une couleur :
+	</h1>
+	
 	<ul id="listButton">
-		<div value="#FF0000" class="buttonColor" id="RedButton"></div>
-		<div value="#00FF00" class="buttonColor" id="BlueButton"></div>
-		<div value="#0000FF" class="buttonColor" id="GreenButton"></div>
-		<div value="#FFFFFF" class="buttonColor" id="WhiteButton"></div>
-		<div value="#000000" class="buttonColor" id="OffButton"></div>
+		<li value="#FF0000" class="buttonColor" id="RedButton"></li>
+		<li value="#00FF00" class="buttonColor" id="BlueButton"></li>
+		<li value="#0000FF" class="buttonColor" id="GreenButton"></li>
+		<li value="#FFFFFF" class="buttonColor" id="WhiteButton"></li>
+		<li value="#000000" class="buttonColor" id="OffButton"></li>
 	</ul>
 	
   </body>
@@ -78,12 +84,9 @@
   <script>
     $(function () {
       var socket = io();
-
+      elem = document.getElementById('message');
       socket.emit('click', true);
       $('#m').val('');
-    });
-    $('.buttonColor').on('click', function() {
-      socket.emit('click', $(this).attr('value'));
     });
   </script>  
 </html>
