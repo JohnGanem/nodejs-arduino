@@ -22,6 +22,56 @@
     <input id="bleu">Bleu>
     <input id="rouge">Rouge>
     <input id="vert">Vert>
+  
+  <style>
+	body {
+		margin: auto;
+	}
+  
+	#listButton {
+		width: 300px;
+		margin: auto;
+		text-align: center;
+	}
+	
+	.buttonColor {
+		height: 50px;
+		width: 50px;
+		border: 1px solid black;
+		border-radius: 25px;
+		cursor: pointer;
+	}
+	
+	#RedButton {
+		background-color: red;
+	}
+	
+	#BlueButton {
+		background-color: blue;
+	}
+	
+	#GreenButton {
+		background-color: green;
+	}
+	
+	#WhiteButton {
+		background-color: white;
+	}
+	
+	#OffButton {
+		background-color: gray;
+	}
+  
+  </style>
+  
+	<ul id="listButton">
+		<div value="#FF0000" class="buttonColor" id="RedButton"></div>
+		<div value="#00FF00" class="buttonColor" id="BlueButton"></div>
+		<div value="#0000FF" class="buttonColor" id="GreenButton"></div>
+		<div value="#FFFFFF" class="buttonColor" id="WhiteButton"></div>
+		<div value="#000000" class="buttonColor" id="OffButton"></div>
+	</ul>
+	
   </body>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
