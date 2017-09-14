@@ -14,16 +14,26 @@
     </style>
   </head>
   <body>
-    <ul id="messages">Salut</ul>
+    <select name="select" id="color">
+      <option value="bleu">Bleu</option>
+      <option value="vert">Vert</option>
+      <option value="rouge">Rouge</option>
+    </select>
+    <input id="bleu">Bleu>
+    <input id="rouge">Rouge>
+    <input id="vert">Vert>
   </body>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
   <script>
     $(function () {
       var socket = io();
-      elem = document.getElementById('message');
+
       socket.emit('click', true);
       $('#m').val('');
+    });
+    $('.buttonColor').on('click', function() {
+      socket.emit('click', $(this).attr('value'));
     });
   </script>  
 </html>

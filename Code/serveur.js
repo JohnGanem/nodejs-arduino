@@ -49,9 +49,9 @@ board.on("ready", function() {
   });
 
   io.on('connection', function(socket){
-    socket.on('click', function(msg){
-      console.log('message: ' + msg);
-      led.color("#00FF00");
+    socket.on('click', function(color){
+      console.log(color);
+      led.color(color);
     });
   });
 
